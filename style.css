@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg: #ffffff;
+    --card: #fcfcfc;
+    --text-main: #1a1a1a;
+    --text-dim: #888888;
+    --accent: #000000;
+    --border: #eeeeee;
+    --canvas-bg: #ffffff;
+    --danger: #ff4d4d;
+    --success: #000000;
+    /* Keeping it minimalist black/white */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header inspired by your h1 style */
+.header-label {
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin: 2rem 0 1rem 0;
+    text-transform: uppercase;
+}
+
+/* Mobile First Wrapper */
+.wrapper-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Tool Bar - Metrics/Options Style */
+.tool-bar {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 0.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+    white-space: nowrap;
+}
+
+.tool-bar div {
+    /* background: #000; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    min-height: 55px;
+}
+
+.tool-bar div input {
+    width: 80px;
+    height: 30px;
+}
+
+/* Canvas Styling - The "Typing Area" of your app */
+#signatureCanvas {
+    width: 100%;
+    height: 350px;
+    background: var(--canvas-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    cursor: crosshair;
+    touch-action: none;
+    /* Prevents scrolling while signing */
+}
+
+/* Button Group - Dashboard Style */
+.btn-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Stacked on mobile */
+    gap: 0.8rem;
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Specific Button Accents */
+#saveBtn {
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+}
+
+#clearBtn {
+    color: var(--danger);
+}
+
+#retrieveBtn:hover,
+#clearBtn:hover {
+    background: #f9f9f9;
+    border-color: var(--text-dim);
+}
+
+#saveBtn:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+}
+
+/* Responsive Enhancements */
+@media (min-width: 768px) {
+    .wrapper-container {
+        padding: 3rem 1rem;
+    }
+
+    .btn-group {
+        grid-template-columns: repeat(3, 1fr);
+        /* Side by side on desktop */
+    }
+
+    #signatureCanvas {
+        height: 400px;
+    }
+
+    .header-label {
+        font-size: 0.9rem;
+    }
+}

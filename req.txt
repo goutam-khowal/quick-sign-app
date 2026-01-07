@@ -1,0 +1,11 @@
+/*
+How to make a quick sign app with only HTML CSS JS
+
+- Color picker for background color and pen color
+- pen size
+- signing box
+- clear btn
+- save and download btn
+- retrieve recent sign btn
+
+*/

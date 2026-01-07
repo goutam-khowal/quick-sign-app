@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Sign</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper-container">
+    <div class="tool-bar">
+      <div>
+        <input type="color" name="bg-color-picker" id="bgColorPicker">
+        <label for="bgColorPicker">
+          Background Color
+        </label>
+      </div>
+      <div>
+        <input type="color" name="pen-color-picker" id="penColorPicker">
+        <label for="penColorPicker">
+          Color
+        </label>
+      </div>
+      <div title="Size">
+        <input type="range" id="penSize" min="1" max="10" value="2">
+        <label for="penSize">Size</label>
+      </div>
+    </div>
+    <canvas id="signatureCanvas"></canvas>
+    <div class="btn-group">
+      <button id="clearBtn">Clear</button>
+      <button id="saveBtn">Save & Download</button>
+      <button id="retrieveBtn">Retrieve Last Saved Signature</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
