@@ -127,14 +127,8 @@ colorPicker.addEventListener("change", (e) => {
 
 // Change canvas background color (with image preservation)
 canvasColor.addEventListener("change", (e) => {
-  const color = e.target.value;
-  const img = new Image();
-  img.onload = () => {
-    ctx.fillStyle = color;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(img, 0, 0);
-  };
-  img.src = canvas.toDataURL();
+  ctx.fillStyle = e.target.value;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 });
 
 // Change pen size (with live preview)
